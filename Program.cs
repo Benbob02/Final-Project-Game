@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace Final_Project_Game
+namespace _07_snake
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Director theDirector = new Director();
+            theDirector.StartGame();
         }
     }
 }
