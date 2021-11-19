@@ -14,7 +14,7 @@ namespace Final_Project
         }
         public int GetPoints()
         {
-            return 50;
+            return 5;
         }
         public void Reset()
         {

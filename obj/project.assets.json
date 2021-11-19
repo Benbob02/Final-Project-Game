@@ -121,11 +121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\Final-Project-Game.csproj",
+      "projectUniqueName": "C:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\Final-Project-Game.csproj",
       "projectName": "Final-Project-Game",
-      "projectPath": "c:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\Final-Project-Game.csproj",
+      "projectPath": "C:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\Final-Project-Game.csproj",
       "packagesPath": "C:\\Users\\benja\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\obj\\",
+      "outputPath": "C:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\benja\\AppData\\Roaming\\NuGet\\NuGet.Config"
