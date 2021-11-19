@@ -1,0 +1,5 @@
+C:\Users\benja\OneDrive\Documents\GitHub\Final-Project-Game\obj\Debug\net5.0\Final-Project-Game.csproj.AssemblyReference.cache
+C:\Users\benja\OneDrive\Documents\GitHub\Final-Project-Game\obj\Debug\net5.0\Final-Project-Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\benja\OneDrive\Documents\GitHub\Final-Project-Game\obj\Debug\net5.0\Final-Project-Game.AssemblyInfoInputs.cache
+C:\Users\benja\OneDrive\Documents\GitHub\Final-Project-Game\obj\Debug\net5.0\Final-Project-Game.AssemblyInfo.cs
+C:\Users\benja\OneDrive\Documents\GitHub\Final-Project-Game\obj\Debug\net5.0\Final-Project-Game.csproj.CoreCompileInputs.cache
