@@ -98,7 +98,7 @@ namespace Final_Project
             _outputService.DrawActor(_scoreBoard);
 
             // TODO: Add this back in when the food class is complete.
-            _outputService.DrawActor(_food);
+            _outputService.DrawText(_food.GetX(),_food.GetY(),_food.GetLetter(), true);
             
             _outputService.DrawActors(_snake.GetAllSegments());
 
