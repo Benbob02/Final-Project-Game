@@ -1,6 +1,6 @@
 using System;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// This is a set of program wide constants to be used in other classes.

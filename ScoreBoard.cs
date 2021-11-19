@@ -1,6 +1,6 @@
 using System;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// The score board in the top portion of the game.

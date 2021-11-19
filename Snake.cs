@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// Represents the snake in the game which is composed of a list

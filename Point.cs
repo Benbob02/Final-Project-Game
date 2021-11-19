@@ -1,6 +1,6 @@
 using System;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// Represents an X, Y pair.

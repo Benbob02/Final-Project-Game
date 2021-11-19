@@ -1,6 +1,6 @@
 using System;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// Represents a square in the snakes body.

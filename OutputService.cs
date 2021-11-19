@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Raylib_cs;
 
-namespace _07_snake
+namespace Final_Project
 {
     /// <summary>
     /// Handles all the interaction with the drawing library.
