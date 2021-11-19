@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SUkaKZ1ZEbJsHUcaQI+uFnlQND2KEvDb5aMwqciKMzVQ3GFcSB6CjayXIAUqspod2dE6OocH/KmP6LR+kCTasQ==",
+  "dgSpecHash": "i6lI/qhi6SEWVaFLi6QHLvVUb2uAVALnrnL65NP5rl6gAit+DjOsbIV6Ow+vu7dJqX83lADcQ+Dgf9BHXCxLUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\benja\\OneDrive\\Documents\\GitHub\\Final-Project-Game\\Final-Project-Game.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\benja\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\benja\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }
