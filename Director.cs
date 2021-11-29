@@ -41,10 +41,12 @@ namespace Final_Project
                 if (_inputService.IsWindowClosing())
                 {
                     _keepPlaying = false;
+                    
                 }
             }
 
-            Console.WriteLine("Game over!");
+            _outputService.OpenWindow(50, 50, "Game Over", Constants.FRAME_RATE);
+            
         }
 
         /// <summary>
