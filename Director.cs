@@ -19,8 +19,7 @@ namespace Final_Project
 
         // TODO: Add this line back in when the Food class
         // is ready
-        List<Food> _food = new List<Food>();
-        Word _word = new Word();
+        Food _food = new Food();
 
         Snake _snake = new Snake();
         ScoreBoard _scoreBoard = new ScoreBoard();
@@ -53,11 +52,6 @@ namespace Final_Project
         private void PrepareGame()
         {
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
-            _word.NewWord();
-            for(int i = 0;i<_word.WordLength();i++)
-            {
-                _food.Add(new Food(_word.GetLetterIndex(i)));
-            }
         }
 
         /// <summary>
@@ -83,6 +77,9 @@ namespace Final_Project
             }
         }
 
+        /// <summary>
+        /// Update any of the actors.
+        /// </summary>
         private void DoUpdates()
         {
             _snake.Move();
@@ -91,25 +88,27 @@ namespace Final_Project
             HandleBodyCollision();
         }
 
-
+        /// <summary>
+        /// Display the updated state of the game to the user.
+        /// </summary>
         private void DoOutputs()
         {
             _outputService.StartDrawing();
 
             _outputService.DrawActor(_scoreBoard);
 
-            foreach(Food i in _food)
-            {
-                 _outputService.DrawText(i.GetX(),i.GetY(),i.GetLetter(), true);
-            }
-           
+            // TODO: Add this back in when the food class is complete.
+            _outputService.DrawText(_food.GetX(),_food.GetY(),_food.GetLetter(), true);
+            
             _outputService.DrawActors(_snake.GetAllSegments());
-
-            _outputService.DrawText(Constants.MAX_X/2,Constants.MAX_Y-30,_word.GetWord(),true);
 
             _outputService.EndDrawing();
         }
 
+        /// <summary>
+        /// Looks for and handles collisions between the snake's head
+        /// and it's body.
+        /// </summary>
         private void HandleBodyCollision()
         {
             Actor head = _snake.GetHead();
@@ -120,27 +119,31 @@ namespace Final_Project
             {
                 if (IsCollision(head, segment))
                 {
+                    // There is a collision
                     _keepPlaying = false;
                     break;
                 }
             }
         }
 
+        /// <summary>
+        /// Looks for and handles the case of the snake's head
+        /// colliding with the food.
+        /// </summary>
         private void HandleFoodCollision()
         {
-
+            // TODO: Add this code back in when
+            // the food class is complete.
 
             Actor head = _snake.GetHead();
-            foreach(Food i in _food)
+            
+            if (IsCollision(head, _food))
             {
-                if (IsCollision(head, i))
-                {
-                    int points = i.GetPoints();
+                int points = _food.GetPoints();
 
-                    _snake.GrowTail(points);
-                    _scoreBoard.AddPoints(points);
-                    i.Reset();
-                }
+                _snake.GrowTail(points);
+                _scoreBoard.AddPoints(points);
+                _food.Reset();
             }
         }
 

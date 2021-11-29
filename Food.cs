@@ -7,13 +7,13 @@ namespace Final_Project
         private int _food;
         private string _letter;
         
-        public Food(char letter)
+        public Food()
         {
             Random rnd = new Random();
-            _position = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
-            _velocity = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
+            _position = new Point(rnd.Next(0,600),rnd.Next(0,400));
+            _velocity = new Point(rnd.Next(0,600),rnd.Next(0,400));
             _food = 5;
-            _letter = letter.ToString();
+            _letter = "A";
         }
         public int GetPoints()
         {
