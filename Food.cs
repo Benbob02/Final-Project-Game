@@ -11,7 +11,7 @@ namespace Final_Project
         {
             Random rnd = new Random();
             _position = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
-            _velocity = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
+            _velocity = new Point(0, 0);
             _food = 5;
             _letter = letter.ToString();
         }
@@ -21,7 +21,8 @@ namespace Final_Project
         }
         public void Reset()
         {
-            MoveNext();
+            Random rnd = new Random();
+            _position = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
         }
         public string GetLetter()
         {
