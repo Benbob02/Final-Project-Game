@@ -8,7 +8,6 @@ namespace Final_Project
         private string _word;
         private List<char> _letters = new List<char>();
         private int _index;
-        private int _points = 5;
         private string[] lines = System.IO.File.ReadAllLines("WordBank.txt");
 
         public void NewWord()
@@ -21,7 +20,7 @@ namespace Final_Project
             {
                 _letters.Add(i);
             }
-            _index = 0;
+
         }
         public int WordLength()
         {
@@ -34,18 +33,6 @@ namespace Final_Project
         public string GetWord()
         {
             return _word;
-        }
-        public char CurrentLetter()
-        {
-            return _letters[_index];
-        }
-        public void IncrementIndex()
-        {
-            _index++;
-        }
-        public int GetPoints()
-        {
-            return _points;
         }
     }
 

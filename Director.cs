@@ -53,7 +53,6 @@ namespace Final_Project
         private void PrepareGame()
         {
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
-            
             _word.NewWord();
             for(int i = 0;i<_word.WordLength();i++)
             {
@@ -129,49 +128,18 @@ namespace Final_Project
 
         private void HandleFoodCollision()
         {
-            List<Food> foodremove = new List<Food>();
-            bool reset = false;
+
 
             Actor head = _snake.GetHead();
             foreach(Food i in _food)
             {
-                if (IsCollision(head, i))// && if (i.GetLetter() == _word.CurrentLetter().ToString())
+                if (IsCollision(head, i))
                 {
-                    if (i.GetLetter() == _word.CurrentLetter().ToString())
-                    {
-                        foodremove.Add(i);
-                        _word.IncrementIndex();
-                    }        
-                    else
-                    {
-                        reset = true;
-                    }
-                }
-            }
-            if (reset == true)
-            {
-                _scoreBoard.AddPoints(-1);
-                _food.Clear();
-                _word.NewWord();
-                for(int i = 0;i<_word.WordLength();i++)
-                {
-                    _food.Add(new Food(_word.GetLetterIndex(i)));
-                }
-            }
-            foreach(Food i in foodremove)
-            {
-                _food.Remove(i);
-            }
-            foodremove.Clear();
-            if (_food.Count == 0)
-            {
-                int points = _word.GetPoints();
-                _snake.GrowTail(points);
-                _scoreBoard.AddPoints(points);
-                _word.NewWord();
-                for(int i = 0;i<_word.WordLength();i++)
-                {
-                    _food.Add(new Food(_word.GetLetterIndex(i)));
+                    int points = i.GetPoints();
+
+                    _snake.GrowTail(points);
+                    _scoreBoard.AddPoints(points);
+                    i.Reset();
                 }
             }
         }
