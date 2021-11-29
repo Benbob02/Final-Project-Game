@@ -45,6 +45,7 @@ namespace Final_Project
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(_backgroundColor);
+            
         }
 
         /// <summary>

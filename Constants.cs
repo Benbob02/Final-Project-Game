@@ -16,6 +16,8 @@ namespace Final_Project
         public const int DEFAULT_TEXT_OFFSET = 4;
 
         public const int SNAKE_LENGTH = 50;
+
+        public const string background = "chalkboard.jpg";
     }
 
 }
