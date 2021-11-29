@@ -44,9 +44,7 @@ namespace Final_Project
                     
                 }
             }
-
-            _outputService.OpenWindow(50, 50, "Game Over", Constants.FRAME_RATE);
-            
+            Console.WriteLine("Game Over");            
         }
 
         /// <summary>
