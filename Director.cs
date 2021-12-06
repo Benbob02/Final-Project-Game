@@ -37,7 +37,7 @@ namespace Final_Project
             _outputService.CloseWindow();
             _outputService.OpenWindow(150, 50, "Game Over", Constants.FRAME_RATE);
             _outputService.StartDrawing();
-            _outputService.DrawText(25, 25, "Game Over", true);
+            _outputService.DrawText(25, 25, "Game Over", false);
             _outputService.EndDrawing();
             System.Threading.Thread.Sleep(5000);
 
@@ -93,12 +93,12 @@ namespace Final_Project
 
             foreach(Food i in _food)
             {
-                 _outputService.DrawText(i.GetX(),i.GetY(),i.GetLetter(), true);
+                 _outputService.DrawText(i.GetX(),i.GetY(),i.GetLetter(), false);
             }
            
             _outputService.DrawActors(_snake.GetAllSegments());
 
-            _outputService.DrawText(Constants.MAX_X/2,Constants.MAX_Y-30,_word.GetWord(),true);
+            _outputService.DrawText(Constants.MAX_X/2,Constants.MAX_Y-30,_word.GetWord(),false);
 
             _outputService.EndDrawing();
         }
@@ -146,6 +146,7 @@ namespace Final_Project
                 _scoreBoard.AddPoints(-1);
                 _food.Clear();
                 _word.NewWord();
+                
 
                 for(int i = 0;i<_word.WordLength();i++)
                 {

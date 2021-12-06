@@ -130,6 +130,7 @@ namespace Final_Project
         {
             _segments[0].SetVelocity(direction);
         }
+        
 
     }
 
