@@ -17,7 +17,7 @@ namespace Final_Project
 
         public const int SNAKE_LENGTH = 50;
 
-        public const string background = "chalkboard.jpg";
+        public const string background = "./chalkboard.jpg";
     }
 
 }

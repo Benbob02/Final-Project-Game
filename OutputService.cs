@@ -46,6 +46,10 @@ namespace Final_Project
             Raylib.BeginDrawing();
             Raylib.ClearBackground(_backgroundColor);
             
+            Raylib_cs.Texture2D loaded = Raylib.LoadTexture(Constants.background);
+            Raylib_cs.Texture2D texture = loaded;
+            Raylib.DrawTexture(texture, 1, 1, Raylib_cs.Color.WHITE);
+            
         }
 
         /// <summary>
