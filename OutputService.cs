@@ -31,13 +31,13 @@ namespace Final_Project
         {
             Raylib.BeginDrawing();
             Raylib.ClearBackground(_backgroundColor);
+
+
+            // The following two lines are to show the nice chalkboard background, 
+            // but it does slow down the computer if you do
             
-            //Raylib_cs.Texture2D loaded = Raylib.LoadTexture(Constants.background);
-            //Raylib_cs.Texture2D texture = loaded;
-            Raylib_cs.Texture2D texture= Raylib.LoadTexture(Constants.background);
-            Raylib.DrawTexture(texture, 1, 1, Color.WHITE);
-            
-            
+            //Raylib_cs.Texture2D texture= Raylib.LoadTexture(Constants.background);
+            //Raylib.DrawTexture(texture, 1, 1, Color.WHITE);
             
         }
 
@@ -48,9 +48,16 @@ namespace Final_Project
         }
 
         
-        public void DrawBox(int x, int y, int width, int height)
+        public void DrawBox(int x, int y, int width, int height, bool death = false)
         {
-            Raylib.DrawRectangle(x, y, width, height, Raylib_cs.Color.RED);            
+            if(!death)
+            {
+                Raylib.DrawRectangle(x, y, width, height, Raylib_cs.Color.YELLOW);            
+            }
+            else
+            {
+                Raylib.DrawRectangle(x, y, width, height, Raylib_cs.Color.RED);
+            }
         }
 
         

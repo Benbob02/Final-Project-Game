@@ -17,6 +17,8 @@ namespace Final_Project
         Snake _snake = new Snake();
         ScoreBoard _scoreBoard = new ScoreBoard();
 
+        List<Deathblock> _deathblocks = new List<Deathblock>();
+
 
         public void StartGame()
         {
@@ -53,6 +55,10 @@ namespace Final_Project
             for(int i = 0;i<_word.WordLength();i++)
             {
                 _food.Add(new Food(_word.GetLetterIndex(i)));
+            }
+            for(int i = 0;i<3;i++)
+            {
+                _deathblocks.Add(new Deathblock());
             }
         }
 
@@ -94,6 +100,10 @@ namespace Final_Project
             foreach(Food i in _food)
             {
                  _outputService.DrawText(i.GetX(),i.GetY(),i.GetLetter(), false);
+            }
+            foreach(Deathblock i in _deathblocks)
+            {
+                _outputService.DrawBox(i.GetX(),i.GetY(),i.GetWidth(),i.GetHeight(),true);
             }
            
             _outputService.DrawActors(_snake.GetAllSegments());
@@ -138,6 +148,14 @@ namespace Final_Project
                     {
                         reset = true;
                     }
+                }
+            }
+            
+            foreach(Deathblock i in _deathblocks)
+            {
+                if(IsCollision(head,i))
+                {
+                    _keepPlaying = false;
                 }
             }
 
