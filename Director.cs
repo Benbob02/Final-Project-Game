@@ -11,7 +11,7 @@ namespace Final_Project
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
 
-        List<Food> _food = new List<Food>();
+        List<Letter> _letter = new List<Letter>();
         Word _word = new Word();
 
         Snake _snake = new Snake();
@@ -54,7 +54,7 @@ namespace Final_Project
 
             for(int i = 0;i<_word.WordLength();i++)
             {
-                _food.Add(new Food(_word.GetLetterIndex(i)));
+                _letter.Add(new Letter(_word.GetLetterIndex(i)));
             }
             for(int i = 0;i<3;i++)
             {
@@ -86,7 +86,7 @@ namespace Final_Project
         {
             _snake.Move();
 
-            HandleFoodCollision();
+            HandleLetterCollision();
             HandleBodyCollision();
         }
 
@@ -97,7 +97,7 @@ namespace Final_Project
 
             _outputService.DrawActor(_scoreBoard);
 
-            foreach(Food i in _food)
+            foreach(Letter i in _letter)
             {
                  _outputService.DrawText(i.GetX(),i.GetY(),i.GetLetter(), false);
             }
@@ -129,19 +129,19 @@ namespace Final_Project
             }
         }
 
-        private void HandleFoodCollision()
+        private void HandleLetterCollision()
         {
-            List<Food> foodremove = new List<Food>();
+            List<Letter> letterremove = new List<Letter>();
             bool reset = false;
 
             Actor head = _snake.GetHead();
-            foreach(Food i in _food)
+            foreach(Letter i in _letter)
             {
                 if (IsCollision(head, i))// && if (i.GetLetter() == _word.CurrentLetter().ToString())
                 {
                     if (i.GetLetter() == _word.CurrentLetter().ToString())
                     {
-                        foodremove.Add(i);
+                        letterremove.Add(i);
                         _word.IncrementIndex();
                     }        
                     else
@@ -162,24 +162,24 @@ namespace Final_Project
             if (reset == true)
             {
                 _scoreBoard.AddPoints(-1);
-                _food.Clear();
+                _letter.Clear();
                 _word.NewWord();
                 
 
                 for(int i = 0;i<_word.WordLength();i++)
                 {
-                    _food.Add(new Food(_word.GetLetterIndex(i)));
+                    _letter.Add(new Letter(_word.GetLetterIndex(i)));
                 }
             }
 
-            foreach(Food i in foodremove)
+            foreach(Letter i in letterremove)
             {
-                _food.Remove(i);
+                _letter.Remove(i);
             }
 
-            foodremove.Clear();
+            letterremove.Clear();
 
-            if (_food.Count == 0)
+            if (_letter.Count == 0)
             {
                 int points = _word.GetPoints();
                 _snake.GrowTail(points);
@@ -188,7 +188,7 @@ namespace Final_Project
 
                 for(int i = 0;i<_word.WordLength();i++)
                 {
-                    _food.Add(new Food(_word.GetLetterIndex(i)));
+                    _letter.Add(new Letter(_word.GetLetterIndex(i)));
                 }
             }
         }
