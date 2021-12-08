@@ -5,7 +5,7 @@ namespace Final_Project
     /// <summary>
     /// Base class for all actors in the game.
     /// </summary>
-    public class Actor
+    public abstract class Actor
     {
         protected Point _position;
         protected Point _velocity;
@@ -69,6 +69,8 @@ namespace Final_Project
         {
             _velocity = newVelocity;
         }
+
+        public abstract void TurnHead(Point direction);
 
         /// <summary>
         /// Moves the actor forward one space according to the current

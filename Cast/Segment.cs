@@ -13,6 +13,11 @@ namespace Final_Project
             _position = position;
             _velocity = velocity;
         }
+
+        public override void TurnHead(Point direction)
+        {
+            
+        }
         
     }
 

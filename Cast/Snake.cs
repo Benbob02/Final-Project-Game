@@ -126,7 +126,7 @@ namespace Final_Project
         /// Turns the head in the direction specified.
         /// </summary>
         /// <param name="direction"></param>
-        public void TurnHead(Point direction)
+        public override void TurnHead(Point direction)
         {
             _segments[0].SetVelocity(direction);
         }

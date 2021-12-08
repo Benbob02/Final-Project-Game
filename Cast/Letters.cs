@@ -24,6 +24,11 @@ namespace Final_Project
         {
             return _letter;
         }
+
+        public override void TurnHead(Point direction)
+        {
+            
+        }
     }
  
 }

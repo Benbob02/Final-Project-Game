@@ -37,6 +37,11 @@ namespace Final_Project
         {
             _text = $"Score: {_points}";
         }
+
+        public override void TurnHead(Point direction)
+        {
+            
+        }
     }
 
 }
