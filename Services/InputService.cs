@@ -38,6 +38,7 @@ namespace Final_Project
         public bool IsWindowClosing()
         {
             return Raylib.WindowShouldClose();
+            //Raylib.WindowShouldClose();
         }
     }
 

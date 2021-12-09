@@ -15,6 +15,8 @@ namespace Final_Project
 
         protected string _text = "";
 
+        public bool gameover = false;
+
         public Actor()
         {
 
@@ -70,7 +72,7 @@ namespace Final_Project
             _velocity = newVelocity;
         }
 
-        public abstract void TurnHead(Point direction);
+
 
         /// <summary>
         /// Moves the actor forward one space according to the current
@@ -104,6 +106,7 @@ namespace Final_Project
         {
             return $"Position: ({_position.GetX()}, {_position.GetY()}), Velocity({_velocity.GetX()}, {_velocity.GetY()})";
         }
+        public abstract void AddPoints(int points);
 
     }
 

@@ -8,17 +8,17 @@ namespace Final_Project
     /// </summary>
     public class DoOutputs : Action
     {
-        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word)
+        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word, Snake _snake)
         {
             OutputService _outputService = new OutputService();
             Actor _scoreBoard = cast["scoreboard"][0];
             List<Actor> _letter = cast["letter"];
             List<Actor> _deathblocks = cast["deathblock"];
-            Actor _snake = cast["snake"][0];
 
             _outputService.StartDrawing();
 
-            _outputService.DrawActor(_scoreBoard);
+            //_outputService.DrawActor(_scoreBoard);
+            _outputService.DrawText(_scoreBoard.GetX(), _scoreBoard.GetY(), _scoreBoard.GetText(), false);
 
             foreach(Letter i in _letter)
             {

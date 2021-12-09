@@ -8,11 +8,12 @@ namespace Final_Project
     /// </summary>
     public class HandleBodyCollision : Action
     {
-        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word)
+        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word, Snake _snake)
         {
-            Actor head = _snake.GetHead();
+            OutputService _outputService = new OutputService();
             PhysicsService _physicsService = new PhysicsService();
 
+            Actor head = _snake.GetHead();
 
             List<Actor> segments = _snake.GetCollidableSegments();
 
@@ -20,11 +21,10 @@ namespace Final_Project
             {
                 if (_physicsService.IsCollision(head, segment))
                 {
-                    _keepPlaying = false;
+                    cast["scoreboard"][0].gameover = true;
                     break;
                 }
             }
-        }
         }
     }
 }

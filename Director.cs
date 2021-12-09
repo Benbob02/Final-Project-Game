@@ -10,15 +10,10 @@ namespace Final_Project
 
         OutputService _outputService = new OutputService();
         InputService _inputService = new InputService();
-        PhysicsService _physicsService = new PhysicsService();
-
 
         public Word _word = new Word();
-
-        Snake _snake = new Snake();
-        ScoreBoard _scoreBoard = new ScoreBoard();
-
-        List<Deathblock> _deathblocks = new List<Deathblock>();
+        Snake _snake;
+        
 
         private Dictionary<string, List<Actor>> _cast;
         private Dictionary<string, List<Action>> _script;
@@ -27,6 +22,7 @@ namespace Final_Project
         {
             _cast = cast;
             _script = script;
+            _snake = new Snake();
         }
         public void StartGame()
         {
@@ -36,11 +32,15 @@ namespace Final_Project
             {
                 CueAction("input");
                 CueAction("update");
-                CueAction("output");
+                
 
-                if (_inputService.IsWindowClosing())
+                if (_inputService.IsWindowClosing() || _cast["scoreboard"][0].gameover == true)
                 {
                     _keepPlaying = false;
+                }
+                else
+                {
+                    CueAction("output");
                 }
             }
 
@@ -54,7 +54,7 @@ namespace Final_Project
 
             foreach (Action action in actions)
             {
-                action.Execute(_cast);
+                action.Execute(_cast, _word, _snake);
             }
         }
 
@@ -66,34 +66,6 @@ namespace Final_Project
             {
                 _cast["letter"].Add(new Letter(_word.GetLetterIndex(i)));
             }
-        }
-
-        private void GetInputs()
-        {
-            if (_inputService.IsLeftPressed())
-            {
-                _snake.TurnHead(new Point(-1, 0));
-            }
-            else if (_inputService.IsRightPressed())
-            {
-                _snake.TurnHead(new Point(1, 0));
-            }
-            else if (_inputService.IsUpPressed())
-            {
-                _snake.TurnHead(new Point(0, -1));
-            }
-            else if (_inputService.IsDownPressed())
-            {
-                _snake.TurnHead(new Point(0, 1));
-            }
-        }
-
-        private void DoUpdates()
-        {
-            _snake.Move();
-
-            HandleLetterCollision();
-            HandleBodyCollision();
         }
 
 

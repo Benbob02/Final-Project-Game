@@ -13,12 +13,9 @@ namespace Final_Project
             OutputService _outputService = new OutputService();
             InputService _inputService = new InputService();
 
-            cast["snake"] = new List<Actor>();
             cast["letter"] = new List<Actor>();
             cast["scoreboard"] = new List<Actor>();
             cast["deathblock"] = new List<Actor>();
-
-            cast["snake"].Add(new Snake());
 
             cast["scoreboard"].Add(new ScoreBoard());
 
@@ -35,6 +32,10 @@ namespace Final_Project
             script["input"].Add(new GetInput());
 
             script["output"].Add(new DoOutputs());
+
+            script["update"].Add(new HandleBodyCollision());
+            script["update"].Add(new HandleLetterCollision());
+            script["update"].Add(new Move());
 
             _outputService.OpenWindow(Constants.MAX_X, Constants.MAX_Y, "Snake Game", Constants.FRAME_RATE);
             

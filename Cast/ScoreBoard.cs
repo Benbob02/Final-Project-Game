@@ -5,7 +5,7 @@ namespace Final_Project
     /// <summary>
     /// The score board in the top portion of the game.
     /// </summary>
-    class ScoreBoard : Actor
+    public class ScoreBoard : Actor
     {
         private int _points = 0;
 
@@ -23,7 +23,7 @@ namespace Final_Project
         /// text.
         /// </summary>
         /// <param name="points"></param>
-        public void AddPoints(int points)
+        public override void AddPoints(int points)
         {
             _points += points;
             UpdateText();
@@ -37,11 +37,11 @@ namespace Final_Project
         {
             _text = $"Score: {_points}";
         }
+        
 
-        public override void TurnHead(Point direction)
-        {
-            
-        }
+        
+
+        
     }
 
 }

@@ -5,7 +5,6 @@ namespace Final_Project
     public class Deathblock : Actor
     {
  
-        
         public Deathblock()
         {
             Random rnd = new Random();
@@ -20,10 +19,11 @@ namespace Final_Project
             _position = new Point(rnd.Next(0,Constants.MAX_X - 20),rnd.Next(0,Constants.MAX_Y - 20));
         }
 
-        public override void TurnHead(Point direction)
+        public override void AddPoints(int points)
         {
-            
+            points += 1;
         }
+
 
     }
  

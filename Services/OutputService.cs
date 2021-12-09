@@ -36,8 +36,8 @@ namespace Final_Project
             // The following two lines are to show the nice chalkboard background, 
             // but it does slow down the computer if you do
 
-            Raylib_cs.Texture2D texture= Raylib.LoadTexture(Constants.background);
-            Raylib.DrawTexture(texture, 1, 1, Color.WHITE);
+            //Raylib_cs.Texture2D texture= Raylib.LoadTexture(Constants.background);
+            //Raylib.DrawTexture(texture, 1, 1, Color.WHITE);
             
         }
 

@@ -8,10 +8,9 @@ namespace Final_Project
     /// </summary>
     public class GetInput : Action
     {
-        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word)
+        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word, Snake _snake)
         {
             InputService _inputService = new InputService();
-            Actor _snake = cast["snake"][0];
 
             if (_inputService.IsLeftPressed())
             {

@@ -7,7 +7,7 @@ namespace Final_Project
     /// Represents the snake in the game which is composed of a list
     /// of overlapping segments.
     /// </summary>
-    class Snake : Actor
+    public class Snake : Actor
     {
         private List<Actor> _segments = new List<Actor>();
         private int _canCollideIndex = Constants.DEFAULT_SQUARE_SIZE * 2 + 1;
@@ -126,11 +126,15 @@ namespace Final_Project
         /// Turns the head in the direction specified.
         /// </summary>
         /// <param name="direction"></param>
-        public override void TurnHead(Point direction)
+        public void TurnHead(Point direction)
         {
             _segments[0].SetVelocity(direction);
         }
         
+        public override void AddPoints(int points)
+        {
+            points += 1;
+        }
 
     }
 

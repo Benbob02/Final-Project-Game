@@ -8,15 +8,18 @@ namespace Final_Project
     /// </summary>
     public class HandleLetterCollision : Action
     {
-        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word)
+        public override void Execute(Dictionary<string, List<Actor>> cast, Word _word, Snake _snake)
         {
             PhysicsService _physicsService = new PhysicsService();
-
+            OutputService _outputService = new OutputService();
 
 
             List<Letter> letterremove = new List<Letter>();
             bool reset = false;
+
             List<Actor> _letter = cast["letter"];
+            List<Actor> _deathblocks = cast["deathblock"];
+            Actor _scoreBoard = cast["scoreboard"][0];
 
             Actor head = _snake.GetHead();
             foreach(Letter i in _letter)
@@ -39,7 +42,7 @@ namespace Final_Project
             {
                 if(_physicsService.IsCollision(head,i))
                 {
-                    _keepPlaying = false;
+                    cast["scoreboard"][0].gameover = true;
                 }
             }
 

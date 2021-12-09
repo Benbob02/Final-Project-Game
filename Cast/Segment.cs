@@ -14,9 +14,9 @@ namespace Final_Project
             _velocity = velocity;
         }
 
-        public override void TurnHead(Point direction)
+       public override void AddPoints(int points)
         {
-            
+            points += 1;
         }
         
     }
