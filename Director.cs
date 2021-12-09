@@ -12,7 +12,7 @@ namespace Final_Project
         InputService _inputService = new InputService();
 
         public Word _word = new Word();
-        Snake _snake;
+        Snake _snake = new Snake();
         
 
         private Dictionary<string, List<Actor>> _cast;
@@ -22,7 +22,6 @@ namespace Final_Project
         {
             _cast = cast;
             _script = script;
-            _snake = new Snake();
         }
         public void StartGame()
         {
