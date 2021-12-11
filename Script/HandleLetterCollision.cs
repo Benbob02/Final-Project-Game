@@ -13,7 +13,6 @@ namespace Final_Project
             PhysicsService _physicsService = new PhysicsService();
             OutputService _outputService = new OutputService();
 
-
             List<Letter> letterremove = new List<Letter>();
             bool reset = false;
 
@@ -69,6 +68,7 @@ namespace Final_Project
             if (_letter.Count == 0)
             {
                 int points = _word.GetPoints();
+
                 _snake.GrowTail(points);
                 _scoreBoard.AddPoints(points);
                 _word.NewWord();
