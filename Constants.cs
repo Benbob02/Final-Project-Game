@@ -9,7 +9,7 @@ namespace Final_Project
     {
         public const int MAX_X = 600;
         public const int MAX_Y = 400;
-        public const int FRAME_RATE = 90;
+        public const int FRAME_RATE = 120;
 
         public const int DEFAULT_SQUARE_SIZE = 20;
         public const int DEFAULT_FONT_SIZE = 18;
